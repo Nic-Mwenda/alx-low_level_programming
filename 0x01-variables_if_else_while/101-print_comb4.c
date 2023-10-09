@@ -7,13 +7,16 @@
  * @c: The third number
  * Description: This function is used to print combinations of three numbers.
  */
-void printCombination(int a, int b, int c)
+void printCombination(int a, int b, int c, int lst)
 {
 	putchar(a + '0');
 	putchar(b + '0');
 	putchar(c + '0');
-	putchar(',');
-	putchar(' ');
+	if (!lst)
+	{
+		putchar(',');
+		putchar(' ');
+	}
 }
 /**
  * main - Entry point of the program
@@ -24,6 +27,7 @@ void printCombination(int a, int b, int c)
 int main(void)
 {
 	int num1, num2, num3;
+	int last = 0;
 
 	for (num1 = 0; num1 <= 7; num1++)
 	{
@@ -31,7 +35,8 @@ int main(void)
 		{
 			for (num3 = num2 + 1; num3 <= 9; num3++)
 			{
-				printCombination(num1, num2, num3);
+				last = (num1 == 7 && num2 == 8 && num3 == 9);
+				printCombination(num1, num2, num3, last);
 			}
 		}
 	}

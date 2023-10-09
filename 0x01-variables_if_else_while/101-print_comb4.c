@@ -5,6 +5,7 @@
  * @a: The first number
  * @b: The second number
  * @c: The third number
+ * @lst: The last combination
  * Description: This function is used to print combinations of three numbers.
  */
 void printCombination(int a, int b, int c, int lst)
